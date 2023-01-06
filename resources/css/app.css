@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.footer_mh {
+    min-height: calc(100vh - 188px) !important;
+}
+
+.bg_bunting {
+    background: #172853 !important;
+}
+.text_bunting {
+    color: #172853 !important;
+}
+
+.bg_steel_blue {
+    background: #487eb7 !important;
+}
+.text_steel_blue {
+    color: #487eb7 !important;
+}
+
+.bg_metalic_gold {
+    background: #d4af37 !important;
+}
+.text_metalic_gold {
+    color: #d4af37 !important;
+}
+
+.st-sticky-share-buttons {
+    display: none !important;
+}
