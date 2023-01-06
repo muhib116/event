@@ -6,7 +6,10 @@
         <p>{{ ticket.ticket_description }}</p>
         <div class="ticket-btmcnt">
             <h4>
-                {{ ticket.ticket_type == 'Free' || !ticket.price || ticket.price == 0 ? 'Free' : `${ getTicketPrice(ticket)} ${$page.props?.currency.value}` }}
+                <span v-if="ticket.ticket_type == 'Free' || !ticket.price || ticket.price == 0">Free</span>
+                <span v-else>
+                    {{ getTicketPrice(ticket) }} <span style="font-family: initial !important;">{{ $page.props?.currency.value }}</span>
+                </span>
             </h4>
             <div class="quantity">
                 <span @click="quantity>0&&quantity--" class="input-number-decrement">

@@ -7,14 +7,17 @@
                     <div class="left">
                         <h1>{{ event.name }}</h1>
                         <!-- <p><i class="fa-solid fa-calendar-days"></i> Wed, Aug 17 2022 at 10:00 PM - 10:30 PM GDT (Greenland)</p> -->
-                        <p><i class="fa-solid fa-calendar-days"></i> {{ event.start_date_formate }} at {{ event.start_time }} - {{ event.end_date_formate }} at {{ event.start_time }} </p>
+                        <p>
+                            <i class="fa-solid fa-calendar-days"></i> 
+                            {{ moment(event.start_date).format('ddd., MMM, YYYY') }} at {{ event.start_time_formate }} - 
+                            {{ moment(event.end_date).format('ddd., MMM, YYYY') }} at {{ event.end_time_formate }} </p>
                         <p><i class="fa-solid fa-location-dot"></i> {{ event.location }}</p>
                     </div>
                     <div class="right">
                         <p class="top" v-if="event.is_expired"><i class="fa-solid fa-circle-exclamation"></i> This event ended {{ event.expired_at }} ago, to republish it:</p>
                         <p class="top" v-if="!event.is_expired && $page.props.has_payment_details != 1"><i class="fa-solid fa-circle-exclamation"></i> Things to do before you can make your event live</p>
                         <p class="requirement" v-if="$page.props.has_payment_details != 1"><span class="cursor-pointer select-none" @click="payPoput=true">Add payment details</span> so you can get paid</p>
-                        <p class="requirement" v-if="event.ticket_count == 0"><span>Create some tickets</span> for your event</p>
+                        <p class="requirement" v-if="event.ticket_count == 0"><span @click="showPopup=true" class="cursor-pointer">Create some tickets</span> for your event</p>
                         <p class="requirement" v-if="event.is_expired && !$page.props.is_paid">Update the <span class="cursor-pointer select-none" @click="updateEventDate">event date</span> </p>
                     </div>
                 </div>
@@ -30,13 +33,17 @@
                     </div>
                 </div>
             </nav>
-
+            <TicketCreatePopup
+                v-model="showPopup" 
+                :userId="userId"
+            />
             <div class="Profile--Personal account-item container mx-auto mt-5">
                 <component 
                     :is="components[activeComponent]" 
                     :event="event" 
                     :editable="true"
                     :userId="userId"
+                    :settings="settings"
                 ></component>
             </div>
         </AuthenticatedLayout>
@@ -55,9 +62,13 @@
     import Master from './Master.vue'
     import useEvent from '@/Pages/useEvent.js'
     import PaymentPopup from '@/Components/dashboard/popup/PaymentPopup.vue'
+    import moment from "moment"
+import TicketCreatePopup from '@/Components/dashboard/popup/TicketCreatePopup.vue'
     const props = defineProps({
-        userId: [Number, String]
+        userId: [Number, String],
+        settings: Object
     })
+    const showPopup = ref(false)
     const { getEventId, getEvent } = useEvent()
     const activeComponent = ref('EventDetail')
     const event = ref({})

@@ -139,7 +139,7 @@ class FrontendController extends Controller
 
 
     public function category_wise_event($category) {
-        $this->data['events'] = EventList::with(['images'])
+        $this->data['events'] = EventList::with(['images', 'user'])
                                 ->withMin('eventTickets as min_price', 'price')
                                 ->withMax('eventTickets as max_price', 'price')
                                 ->where('eventCategory', 'LIKE', '%'.$category.'%')

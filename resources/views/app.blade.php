@@ -20,7 +20,7 @@
         @inertiaHead
         <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=63b84e780f3ebf00195508f0&product=sop' async='async'></script>
     </head>
-    <body class="">
+    <body class="" id="root__body">
         @inertia
     </body>
 </html>

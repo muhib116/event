@@ -16,11 +16,11 @@
                         <div class="dropdown">
                             <div class="dropdown-item filter-item " @click="activeTab = 'profile-personal'">Personal</div>
                             <div class="dropdown-item filter-item" @click="activeTab = 'profile-password'">Password</div>
-                            <div class="dropdown-item filter-item" @click="activeTab = 'profile-interests'">Interests</div>
+                            <!-- <div class="dropdown-item filter-item" @click="activeTab = 'profile-interests'">Interests</div> -->
                         </div>
                     </div>
                     <div class="billing nav-item filter-item" :class="{ 'active': activeTab == 'billing' }" @click="activeTab = 'billing'">Billing</div>
-                    <div class="dropdown-container">
+                    <!-- <div class="dropdown-container">
                         <div class="profile nav-item filter-item" :class="{ 'active': activeTab == 'order-notifications' }" @click="activeTab = 'order-notifications'">
                             Settings
                             <i class="fa-solid fa-chevron-down"></i>
@@ -29,7 +29,7 @@
                             <div class="dropdown-item filter-item " @click="activeTab = 'order-notifications'">Order notifications</div>
                             <div class="dropdown-item filter-item" @click="activeTab = 'payment-settings'">Payment settings</div>
                         </div>
-                    </div>
+                    </div> -->
                 </nav>
                 <!-- Profile -->
                 <form class="Profile--Personal account-item" method="POST" v-show="activeTab == 'profile-personal'" @submit.prevent="savePersonalInfo">
@@ -193,47 +193,7 @@
                             </button>
                         </div>
                     </div>
-                </div>
-                <!-- settings -->
-                <!-- <div class="settings--order-notification account-item" v-show="activeTab == 'order-notifications'">
-                    <h2>Order Notifications</h2>
-                    <p>How frequently should we send order notifications by email?</p>
-                    <div class="options">
-                        <div class="element">
-                            <input type="radio" name="order-notification-option">
-                            <label>Instantly, for each order as it comes in</label>
-                        </div>
-                        <div class="element">
-                            <input type="radio" name="order-notification-option">
-                            <label>Daily summary, a daily summary of all orders sold each day</label>
-                        </div>
-                        <div class="element">
-                            <input type="radio" name="order-notification-option">
-                            <label>Weekly summary, a weekly summary of all orders sold each week</label>
-                        </div>
-                        <div class="element">
-                            <input type="radio" name="order-notification-option">
-                            <label>I do not want to receive order notifications</label>
-                        </div> 
-                        <div class="save">
-                            <div class="button">Save</div>
-                        </div>
-                    </div>
-                </div> -->
-                <div class="settings--order-notification account-item" v-show="activeTab == 'payment-settings'">
-                    <h2>Payment Settings</h2>
-                    <p>How frequently should we send order notifications by email?</p>
-                    <div class="options">
-                        <div class="element">
-                            <input type="radio" name="payment-settings-option">
-                            <label>Weekly, your payouts are batched and paid once a week on friday</label>
-                        </div>
-                        <!-- save -->
-                        <div class="save">
-                            <div class="button">Save</div>
-                        </div>
-                    </div>
-                </div>
+                </div> 
             </div>
         </AuthenticatedLayout>
     </Master>

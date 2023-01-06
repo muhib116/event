@@ -68,6 +68,7 @@ class HandleInertiaRequests extends Middleware
             'category_list' => $category_list,
             'user' => auth()->user(),
             'url' => url(''),
+            'site_name' => $settings->where('name', 'site_name')->first(),
             'currency' => $settings->where('name', 'currency')->first(),
             'settings' => [
                 'stripe_publish_key' => $settings->where('name', 'stripe_publish_key')->first(),

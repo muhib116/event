@@ -8,7 +8,7 @@
                     </div>
                     <div class="search-right">
                         <!-- <div class="date-field"> -->
-                        <div class="w-[270px]">
+                        <div class="w-[270px] flex flex-wrap">
                             <el-date-picker
                                 v-model="daterange"
                                 class="w-full border-none py-3 h-[40px]"
@@ -66,5 +66,30 @@ function searchSubmit() {
 .el-range-editor.is-active,
 .el-range-editor.is-active:hover {
     box-shadow: 0 0 0 1px #4F4CEE inset !important;
+}
+@media (max-width: 768px) {
+    .el-picker-panel__body {
+        display: flex;
+        flex-direction: column;
+        min-width: 100% !important;
+        width: 100% !important;
+    }
+    .el-date-range-picker__time-header {
+        display: flex;
+        flex-direction: column;
+    }
+    .el-picker-panel {
+        width: 100% !important;
+    }
+    .el-date-range-picker__content {
+        width: 100% !important;
+    }
+    .el-date-range-picker__editors-wrap {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .el-date-range-picker__time-picker-wrap {
+        width: 100%;
+    }
 }
 </style>

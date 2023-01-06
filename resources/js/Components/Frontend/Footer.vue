@@ -29,25 +29,25 @@
                 <div class="footer-btmitem">
                     <ul>
                         <li v-if="$page.props.settings.facebook_link?.value">
-                            <a :href="$page.props.settings.facebook_link.value" class="text-xs"><i class="fab fa-twitter"></i></a>
+                            <a :href="$page.props.settings.facebook_link.value" target="_blank" class="text-xs"><i class="fab fa-twitter"></i></a>
                         </li>
                         <li v-if="$page.props.settings.twitter_link?.value">
-                            <a :href="$page.props.settings.twitter_link.value" class="text-xs"><i class="fab fa-instagram"></i></a>
+                            <a :href="$page.props.settings.twitter_link.value" target="_blank" class="text-xs"><i class="fab fa-instagram"></i></a>
                         </li>
                         <li v-if="$page.props.settings.tiktok_link?.value">
-                            <a :href="$page.props.settings.tiktok_link.value" class="text-xs"><i class="fab fa-tiktok"></i></a>
+                            <a :href="$page.props.settings.tiktok_link.value" target="_blank" class="text-xs"><i class="fab fa-tiktok"></i></a>
                         </li>
                         <li v-if="$page.props.settings.instagram_link?.value">
-                            <a :href="$page.props.settings.instagram_link.value" class="text-xs"><i class="fab fa-youtube"></i></a>
+                            <a :href="$page.props.settings.instagram_link.value" target="_blank" class="text-xs"><i class="fab fa-youtube"></i></a>
                         </li>
                         <li v-if="$page.props.settings.youtube_link?.value">
-                            <a :href="$page.props.settings.youtube_link.value" class="text-xs"><i class="fab fa-telegram"></i></a>
+                            <a :href="$page.props.settings.youtube_link.value" target="_blank" class="text-xs"><i class="fab fa-telegram"></i></a>
                         </li>
                         <li v-if="$page.props.settings.telegram_link?.value">
-                            <a :href="$page.props.settings.telegram_link.value" class="text-xs"><i class="fab fa-facebook-square"></i></a>
+                            <a :href="$page.props.settings.telegram_link.value" target="_blank" class="text-xs"><i class="fab fa-facebook-square"></i></a>
                         </li>
                     </ul>
-                    <p class="text-xs">&copy; 2020 Karcis incorporated</p>
+                    <p class="text-xs">&copf; {{ new Date().getFullYear() }} {{ get($page, 'props.site_name.value') }}</p>
                 </div>
             </div>
         </div>
@@ -56,6 +56,7 @@
 
 <script setup>
 import { Link } from '@inertiajs/inertia-vue3';
+import {get} from 'lodash'
 </script>
 
 <style lang="scss" scoped>

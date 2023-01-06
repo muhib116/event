@@ -63,7 +63,7 @@
                                         {{ transaction.status }}
                                     </td>
                                     <td class="text-center px-2 py-4 text-gray-700">
-                                        {{ transaction.amount }} {{ $page.props.settings?.currency.value }}
+                                        {{ transaction.amount }} <span style="font-family: initial !important;">{{ $page.props.settings?.currency.value }}</span>
                                     </td> 
                                 </tr> 
                             </tbody>

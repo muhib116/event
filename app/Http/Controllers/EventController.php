@@ -156,8 +156,10 @@ class EventController extends Controller
         $end = Carbon::parse(date('Y-m-d H:i:s', strtotime("$eventList->end_date $eventList->end_time")));
         $eventList->expired_at = $this->getDurationFormate($end->diffInSeconds(now()));
         $eventList->is_expired = now()->gt($end);
-        $eventList->end_date_formate = $end->format('d-M-Y');
-        $eventList->start_date_formate = $start->format('d-M-Y');
+        $eventList->start_time_formate = Carbon::parse($eventList->start_time)->format('H:i');
+        $eventList->end_time_formate = Carbon::parse($eventList->end_time)->format('H:i');
+        // $eventList->start_time = Carbon::parse($eventList->start_time)->format('h:i a');
+        // $eventList->end_time = Carbon::parse($eventList->end_time)->format('h:i a');
         return response()->json($eventList, 200);
     }
     public function getEventGuest(EventList $eventList) {

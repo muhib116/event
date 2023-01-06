@@ -1,5 +1,5 @@
 <template>
-    <Head title="Ticket Prime" />
+    <Head :title="get($page, 'props.site_name.value')" />
 
     <Master>
         <Banner />
@@ -30,6 +30,7 @@
     import HotOffers from '@/Components/Frontend/HotOffers.vue'
     import TopSelling from '@/Components/Frontend/TopSelling.vue'
 import OfferCarousel from '@/Components/Frontend/OfferCarousel.vue'
+import {get} from 'lodash'
 
     defineProps({
         canLogin: Boolean,

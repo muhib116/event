@@ -7,7 +7,7 @@
                     <div class="name">Tickets sold</div>
                 </div>
                 <div class="column">
-                    <div class="number">{{ $page.props.settings?.currency?.value }}{{ eventSales?.ticket_revenue }}</div>
+                    <div class="number">{{ eventSales?.ticket_revenue }} <span style="font-family: initial !important;">{{ $page.props.settings?.currency?.value }}</span></div>
                     <div class="name">Sales revenue</div>
                 </div>
                 <div class="column">
@@ -30,7 +30,7 @@
                         </button>
                     </div>
                     <div class="text-center" v-if="!$page.props.is_paid">
-                        <div class="number">{{ $page.props.next_payout_date }}</div>
+                        <div class="number">{{ moment($page.props.next_payout_date).format('ddd., MMM., YYYY') }}</div>
                         <div class="name">Next payout date</div>
                     </div>
                     <!-- Payment in progress -->
@@ -44,7 +44,7 @@
             </div>
         </div>
         <div class="guestlist event-item " data-item="guestlist">
-            <div class="shadow mt-10 rounded border-t">
+            <div class="shadow mt-10 rounded border-t" id="d_tbl">
                 <el-table
                     :data="filterTableData"
                     style="width: 100%; margin-bottom: 20px"
@@ -94,7 +94,8 @@
             default: false
         },
         userId: [String, Number],
-        event: Object
+        event: Object,
+        settings: Object,
     });
     
     const {getImages} = useFileUpload()
@@ -130,8 +131,10 @@
 
     const search = ref('')
     const filterTableData = computed(() => {
+        // console.log();
         return getData().filter((data) => {
             if(!search.value || data.name.toLowerCase().includes(search.value.toLowerCase())){
+                data.price = `${data.price} ${props.settings.currency.value}`
                 return data
             }
         })
@@ -151,6 +154,8 @@
     // })
 </script>
 
-<style scoped>
-    
+<style>
+#d_tbl table tr.el-table__row td:nth-child(4) .cell {
+    font-family: initial !important;
+}
 </style>

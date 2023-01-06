@@ -295,6 +295,12 @@ function edit(ad) {
 
 function onFileChange(e) {
     const file = URL.createObjectURL(e.target.files[0]);
+    let selected_file = e.target.files[0];
+    console.log(selected_file);
+    if (selected_file.size/1024 > 1024) {
+        alert('Maximum file upload size should 1MB');
+        return;
+    }
     prev_img.value = file;
     // advertise_form.image = file;
 }
