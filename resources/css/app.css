@@ -3,13 +3,13 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: DefaultFont;
+    font-family: "New Hero";
     src: url(./Hero/Commercial/TTF/Hero-Bold.ttf),
         url(./Hero/Commercial/TTF/Hero-Light.ttf),
         url(./Hero/Commercial/TTF/Hero-Regular.ttf);
 }
 html body#root__body *:not(i,.fa, .fa-regular,.fa-solid,.fa-brand,.fas,.far,.fab) {
-    font-family: "DefaultFont" !important;
+    font-family: "New Hero" !important;
 }
 .footer_mh {
     min-height: calc(100vh - 188px) !important;

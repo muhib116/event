@@ -46,7 +46,7 @@ class EventController extends Controller
             "user_id"    => $request->user_id,
             "eventType"    => $request->eventType,
             "name"         => $request->name,
-            "slug"         => str()->slug($request->name),
+            "slug"         => str()->slug($request->url),
             "description"  => $request->description,
             "terms_and_conditions" => $request->terms_and_conditions,
             "audience"      => $request->audience,
@@ -111,6 +111,7 @@ class EventController extends Controller
         $data = [
             "eventType"    => $request->eventType,
             "name"         => $request->name,
+            "slug"         => str()->slug($request->url),
             "description"  => $request->description,
             "terms_and_conditions" => $request->terms_and_conditions,
             "audience"     => $request->audience,
@@ -254,5 +255,14 @@ class EventController extends Controller
             'type' => 'success',
             'message' => "Checked in successfully"
         ]);
+    }
+
+    public function validateCustomUrl(Request $request)
+    {
+
+        $slug = $request->url;
+        $response = EventList::where(['slug' => $slug])->first();
+        $status = $response ? false : true;
+        return response()->json(['status' => $status]);
     }
 }

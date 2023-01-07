@@ -19,6 +19,7 @@ import StartupsSmallBusiness from "../assets/images/svgs/16.svg"
 import TechnologyScience from "../assets/images/svgs/17.svg"
 import { get } from 'lodash'
 
+const isUniqCustomUrl = ref(true)
 const eventsCategory = ref([
     {
         src: ArtsCulture,
@@ -209,8 +210,21 @@ export default function useEvent(){
             .replace(/[^\w-]+/g,'')
             .replace(/--/g, '-')
         return Text
-    } 
+    }
 
+    let timeoutId = null
+    const validateCustomUrl = (e) => 
+    {
+        clearTimeout(timeoutId)
+        timeoutId = setTimeout(async () => {
+            let data = {
+                url: convertToSlug(e.target.value)
+            }
+            let res = await axios.post('custom-url-validation', data).then(({data}) => data)
+            
+            isUniqCustomUrl.value = res.status
+        })
+    }
     return {
         eventsCategory,
         setActiveEvent,
@@ -222,6 +236,8 @@ export default function useEvent(){
         getEvent,
         getEventGuest,
         get_banner,
-        convertToSlug
+        convertToSlug,
+        validateCustomUrl,
+        isUniqCustomUrl
     }
 }

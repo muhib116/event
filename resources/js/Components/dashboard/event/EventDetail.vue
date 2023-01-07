@@ -7,19 +7,19 @@
         </div>
         <div class="element">
             <label for="name">*Describe your event</label>
-            <textarea rows="15" :class="validationFor.description.hasError && 'border-red-500'" v-model="eventForm.description" placeholder="Write about your event"></textarea>
+            <textarea rows="2" :class="validationFor.description.hasError && 'border-red-500'" v-model="eventForm.description" placeholder="Write about your event"></textarea>
         </div>
         <div class="element">
             <label for="name">Terms and Conditions</label>
-            <textarea rows="15" v-model="eventForm.terms_and_conditions" placeholder="Write terms and condition for your event"></textarea>
+            <textarea rows="2" v-model="eventForm.terms_and_conditions" placeholder="Write terms and condition for your event"></textarea>
         </div>
         <div class="element">
             <label for="name">Audience</label>
-            <textarea rows="15" v-model="eventForm.audience" placeholder="Write you message for the audience"></textarea>
+            <textarea rows="2" v-model="eventForm.audience" placeholder="Write you message for the audience"></textarea>
         </div>
         <div class="element">
             <label for="name">Attention</label>
-            <textarea rows="15" v-model="eventForm.attention"></textarea>
+            <textarea rows="2" v-model="eventForm.attention"></textarea>
         </div>
         <div class="element">
             <label for="location">*Location of event</label>
@@ -32,9 +32,17 @@
         <div class="element">
             <label for="location">*Use Custom URL</label>
             <div class="input-container">
-                <div class="startup flex whitespace-nowrap">{{ $page.props.url }}/event-details</div>
-                <input name="url" type="url" :class="validationFor.url.hasError && 'border-red-500'" required v-model="eventForm.url" placeholder="Enter custom url">
+                <div class="startup flex whitespace-nowrap">{{ urlPrefix }}/event-details/</div>
+                <input name="url" 
+                    type="url" 
+                    :class="validationFor.url.hasError && 'border-red-500'" 
+                    required 
+                    v-model="eventForm.url" 
+                    placeholder="Enter custom url"
+                    @input="validateCustomUrl"
+                >
             </div>
+            <p v-if="!isUniqCustomUrl" class="text-sm text-red-400">Url already used!</p>
         </div>
         <div class="element">
             <label for="location">*Location tips</label>
@@ -167,8 +175,12 @@
         setActiveEvent,
         eventForm,
         getEventId,
-        getEvent
+        getEvent,
+        validateCustomUrl,
+        isUniqCustomUrl
     } = useEvent()
+
+    const urlPrefix = ref()
 
     let validationFor = ref({
         name: {
@@ -194,11 +206,6 @@
         locationTips: {
             field: 'locationTips',
             title: 'Location Tips',
-            hasError: false
-        },
-        timezone: {
-            field: 'timezone',
-            title: 'Time Zone',
             hasError: false
         },
         start_date: {
@@ -235,6 +242,14 @@
     }
 
     const handleEvent = async () => {
+        if(!isUniqCustomUrl.value){
+            toast.error("Custom Url Must Be Unique!", {
+                timeout: 2000,
+                position: "top-center",
+            })
+            return
+        }
+
         if(!isValid.value) {
             toast.error("Required field must not be empty!", {
                 timeout: 2000,
@@ -252,6 +267,7 @@
             window.location.href=route('appearance', eventId.value)
             return;
         }
+
         toast.error("Event not created!", {
             timeout: 2000,
             position: "top-center",
@@ -261,11 +277,18 @@
     const saveEvent = async (payload) => {
         payload.user_id = props.userId
         let { data } = await axios.post('store/event', payload)
+        
         if(data.id){
             eventId.value = data.id
             return true
         }
 
+        if(data.error){
+            toast.error(data.error, {
+                timeout: 2000,
+                position: "top-center",
+            })
+        }
         return false
     }
 
@@ -277,7 +300,7 @@
                 position: "top-center",
             })
         }
-        console.log(data);
+        
         if (data.error) {
             toast.error(data.error);
         }
@@ -306,6 +329,9 @@
     }
 
     onMounted(async () => {
+        document.title = 'Event management'
+        urlPrefix.value = location.origin
+        
         if(props.editable){
             let eventData = await getEvent(getEventId())
             eventForm.value = eventData
@@ -321,7 +347,7 @@
         background-image: none;
         border-radius: 6px;
         border: 1px solid rgba(0, 0, 0, 0.2);
-        height: 140px;
+        height: 80px;
         outline: 0;
         padding: 15px 15px;
         transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);

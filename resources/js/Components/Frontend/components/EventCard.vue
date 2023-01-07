@@ -21,7 +21,7 @@
                 <div class="border-b border-gray-300 mb-2 mt-3"></div>
                 <div class="flex justify-between pb-2">
                     <span v-if="item.min_price">{{  item.min_price }} <span style="font-family: initial !important;">{{ $page.props.currency?.value }}</span></span>
-                    <span style="font-family: initial !important;">Free</span>
+                    <span v-else>Free</span>
                     <span class="text-orange-600 font-bold font-sans">Get Ticket</span>
                 </div>
             </div>

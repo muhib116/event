@@ -14,9 +14,8 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-sm-6 col-xl-4" v-for="(event, index) in events" :key="index">
+                                <div class="col-sm-6 col-xl-4 mb-8" v-for="(event, index) in events" :key="index">
                                     <EventCard :item="event" />
-                                    
                                 </div>
                             </div>                            
                         </div>

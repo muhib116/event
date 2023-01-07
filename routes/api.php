@@ -73,6 +73,7 @@ Route::get('/event-history/{email}', [GuestController::class, 'getHistory'])->na
 // get event guest
 Route::get('event-guest/{eventList}', [EventController::class, 'getEventGuest'])->name('get.event_guest');
 Route::get('event-sales/{eventList}', [EventController::class, 'getEventSales'])->name('get.event_sales');
+Route::post('custom-url-validation', [EventController::class, 'validateCustomUrl'])->name('validate.custom_url');
 
 Route::post('checkin', [EventController::class, 'checkin'])->name('check_in');
 

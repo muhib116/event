@@ -14,7 +14,8 @@ import { createAuth0 } from '@auth0/auth0-vue';
 import ElementPlus from 'element-plus'
 import VueQrcodeReader from "vue3-qrcode-reader"; 
 import CKEditor from '@ckeditor/ckeditor5-vue';
-
+import { get } from 'lodash'
+ 
 axios.defaults.baseURL = `${window.location.origin}/api/`;
 
 const appName = window.document.getElementsByTagName('title')[0]?.innerText || '';
@@ -36,8 +37,8 @@ createInertiaApp({
             .use(CKEditor) 
             .use(
                 createAuth0({
-                    domain: `${settings?.auth0_domain.value}`,
-                    client_id: `${settings?.auth0_client_id.value}`,
+                    domain: `${get(settings, 'auth0_domain.value')}`,
+                    client_id: `${get(settings, 'auth0_client_id.value')}`,
                     redirect_uri: `${window.location.origin}/`,
                 })
             )

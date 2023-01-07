@@ -24,7 +24,7 @@
                                 <button v-if="!isAuthenticated && !isLoading" @click="login">Log in</button>
                                 <ul class="dropdown absolute top-[50px] right-0 bg-white shadow w-[260px] rounded"> 
                                     <li class="truncate border-b px-0">
-                                        <div @click="login" class="cursor-pointer flex items-center px-3 py-2 hover:bg-gray-100  border-0 text-black text-md">Guest login</div>
+                                        <div @click="login" class="cursor-pointer flex items-center px-3 py-2 hover:bg-gray-100  border-0 text-black text-md" style="font-size: 14px;">Guest login</div>
                                     </li>
                                     <li class="truncate border-b px-0">
                                         <Link :href="route('login')" class="cursor-pointer flex items-center px-3 py-2 hover:bg-gray-100  border-0 text-black text-md">Organizer login</Link>
