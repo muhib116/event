@@ -47,14 +47,14 @@
                         </tr>
                         <tr>
                             <th>Start from:</th>
-                            <td>{{ date('M d Y', strtotime($ticketSales->ticket->event->start_date)) }} At 
-                            {{ date('H:s:i a', strtotime($ticketSales->ticket->event->start_time)) }}</td>
+                            <td>{{ date('D., M., Y', strtotime($ticketSales->ticket->event->start_date)) }} At 
+                            {{ date('H:s', strtotime($ticketSales->ticket->event->start_time)) }}</td>
                         </tr>
                         <tr>
                             <th>End at:</th>
                             <td>
-                                {{ date('M d Y', strtotime($ticketSales->ticket->event->end_date)) }} At
-                                {{ date('H:s:i a', strtotime($ticketSales->ticket->event->end_time)) }}
+                                {{ date('D., M., Y', strtotime($ticketSales->ticket->event->end_date)) }} At
+                                {{ date('H:s', strtotime($ticketSales->ticket->event->end_time)) }}
                             </td>
                         </tr>
                         <tr>

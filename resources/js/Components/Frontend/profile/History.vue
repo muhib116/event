@@ -77,7 +77,7 @@
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap text-center">
                         {{ moment(item.ticket?.event.start_date).format('ddd., MMM., YYYY') }} {{ moment(item.ticket?.event.start_time, 'H:m a').format('H:m') }} <br> to <br>
-                        {{ item.ticket?.event.end_date }} {{ moment(item.ticket?.event.end_time, 'H:m a').format('H:m') }}
+                        {{ moment(item.ticket?.event.end_date).format('ddd., MMM., YYYY') }} {{ moment(item.ticket?.event.end_time, 'H:m a').format('H:m') }}
                         <!-- 22-12-12, 09:15am to 22-12-12, 04:00pm -->
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap"> 
