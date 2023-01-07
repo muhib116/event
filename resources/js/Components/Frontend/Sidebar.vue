@@ -12,9 +12,9 @@
         >
             <div class="offcanvas-header">
                 <h5 class="offcanvas-title" id="offcanvasExampleLabel">
-                    <a href="#">
-                        <img src="@/assets/frontend/images/logo.png" alt="">
-                    </a>
+                    <Link :href="route('home')">
+                        <img :src="get($page.props, 'settings.logo_image.value')" alt="" />
+                    </Link>
                 </h5>
                 <button @click="$emit('update:modelValue', false)" type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
@@ -53,7 +53,7 @@
                         <div @click="login" class="">Guest login</div>
                     </li>
                     <li class="truncate border-b px-0">
-                        <Link :href="route('register')" class="">Register</Link>
+                        <Link :href="route('register')" class="">Register Organizer</Link>
                     </li>
                     <li class="truncate border-b px-0">
                         <Link :href="route('login')" class="">Organizer login</Link>
@@ -68,6 +68,7 @@
 <script setup>
     import { Link } from '@inertiajs/inertia-vue3';
     import useAuth from '@/useAuth.js'
+    import {get} from 'lodash'
 
     defineProps({
         modelValue: Boolean

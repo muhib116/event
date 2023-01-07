@@ -1,7 +1,7 @@
 <template>
     <div class="event">
         <div class="thumbnail relative">
-            <img :src="`../../../../${get_banner(event.images)}`" alt="Thumbnail">
+            <img v-if="!isEmpty(event.images)" :src="`../../../../${get_banner(event.images)}`" alt="Thumbnail">
             <span @click="handlePublish(event)" class="cursor-pointer">{{ event.publish ? 'Published' : 'Draft' }}</span>
 
             <div v-if="event.views?.count" class="absolute top-2 left-2 flex flex-col bg-white z-10 rounded-md py-0 px-2 text-center">
@@ -35,7 +35,7 @@
     import { Link } from '@inertiajs/inertia-vue3'
     import useEvent from '@/Pages/useEvent.js'
     import { useToast } from "vue-toastification";
-
+    import { isEmpty } from 'lodash'
     const toast = useToast();
     const { get_banner } = useEvent()
     const props = defineProps({

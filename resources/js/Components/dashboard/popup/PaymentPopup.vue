@@ -13,7 +13,7 @@
                  <input name="bank_name" v-model="form.bank_name" type="text">
               </div>
               <div class="element">
-                 <label for="name">IBAN number</label>
+                 <label for="name">IBAN</label>
                  <input name="iban_number" v-model="form.bank_number" type="text">
               </div>
               <div class="element">

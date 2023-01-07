@@ -28,6 +28,7 @@
                                     </li>
                                     <li class="truncate border-b px-0">
                                         <Link :href="route('login')" class="cursor-pointer flex items-center px-3 py-2 hover:bg-gray-100  border-0 text-black text-md">Organizer login</Link>
+                                        <Link :href="route('register')" class="cursor-pointer flex items-center px-3 py-2 hover:bg-gray-100  border-0 text-black text-md">Register Organizer</Link>
                                     </li>
                                 </ul>
                             </li> 
@@ -76,7 +77,7 @@
 
 <style scoped>
     .nav-btn li button {
-        /* font-family: 'General Sans', sans-serif; */
+        font-family: 'Cabinet Grotesk', sans-serif;
         font-weight: 500;
         font-size: 14px;
         color: #4F4CEE;

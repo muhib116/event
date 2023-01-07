@@ -19,7 +19,7 @@
                         <Pagination />
                     </template>
                 </Carousel> 
-                <div class="absolute top-1/2 transform -translate-y-10 flex gap-2 w-full justify-between">
+                <div class="absolute top-1/2 transform -translate-y-10 flex gap-2 w-full justify-between ml-[5px]">
                     <button @click="myCarousel.prev()" class="px-[12px] py-2 rounded bg-[#4f4cee] text-white">
                         <svg width="10" height="17" viewBox="0 0 10 17" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9.87137 2.49918L3.83995 8.53059L9.87137 14.562L8.66508 16.9746L0.2211 8.53059L8.66508 0.0866089L9.87137 2.49918Z" fill="currentColor"/>

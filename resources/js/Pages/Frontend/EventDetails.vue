@@ -18,7 +18,7 @@
                                 <h2>{{ event.name }}</h2>
                                 <ul>
                                     <li><i class="fas fa-map-marker-alt"></i> {{ event.location }}</li>
-                                    <li><i class="fas fa-calendar-alt"></i> {{ moment(event.start_date).format('d-MMM-Y') }} at {{ moment(event.start_time, 'HH:ss a').format('HH:ss a') }} </li>
+                                    <li><i class="fas fa-calendar-alt"></i> {{ moment(event.start_date).format('ddd., MMM., YYYY') }} at {{ moment(event.start_time, 'H:m a').format('H:m') }} </li>
                                 </ul>
                                 <p>
                                     {{ removeTags(event.description).slice(0, 150) }}
@@ -28,7 +28,7 @@
                             </div>
                             <div class="event-cntright">
                                 <p>Tickets starting at</p>
-                                <h4>{{ event.min_price }} {{  $page.props?.currency.value }}</h4>
+                                <h4>{{ event.min_price }} <span style="font-family: initial !important;">{{  $page.props?.currency.value }}</span></h4>
                                 <Link :href="route('ticket-info', event.slug)">Buy Tickets</Link>
                             </div>
                         </div>
@@ -87,17 +87,20 @@
                             <button @click="showTerms = !showTerms" class="text-lg font-black">Terms & Conditions</button>
                             <p v-if="showTerms">{{ event.terms_and_conditions }}</p>
                         </div>    
-                        
+                        <!-- <h2 v-if="event.map_link && event.map_link.indexOf('https://www.google.com/maps/embed')==0" class="text-lg font-black mt-4">Map location</h2>
                         <iframe 
                             v-if="event.map_link && event.map_link.indexOf('https://www.google.com/maps/embed')==0" 
-                            class="block w-full mx-auto h-[300px] mb-4 aspect-auto mt-10" 
+                            class="block w-full mx-auto h-[300px] mb-4 aspect-auto mt-2" 
                             :src="event.map_link" 
                             style="border:0;" 
                             allowfullscreen="" 
                             loading="lazy" 
                             referrerpolicy="no-referrer-when-downgrade"
-                        ></iframe>
-                        
+                        ></iframe> -->
+                        <div v-if="event.locationTips">
+                            <h2 class="text-lg font-black mt-4">Location tips</h2>
+                            {{ event.locationTips }}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -119,7 +122,7 @@
     const props = defineProps({
         event: Object
     })
-    const showTerms = ref(false)
+    const showTerms = ref(true)
     const getVideoCode = (videoLink) => {
         if(!videoLink) return false
         let splitLink = videoLink.split('?v=')

@@ -34,8 +34,8 @@
                     </div>
                 </div>
                 <div class="col-md-12">
-                    <div class="inform-btn">
-                        <button class="bg-[#4F4CEE] text-white px-4 py-3 rounded" type="submit">Continue to Payment</button>
+                    <div class="inform-btn flex items-end">
+                        <button class="bg-[#4F4CEE] text-white w-auto inline-block px-4 py-3 rounded" type="submit">Continue to Payment</button>
                     </div>
                 </div>
             </form>

@@ -17,7 +17,7 @@
                                     <img :src="`../../../../${get_banner(event?.images)}`" alt="" />
                                     <div class="event-cnt">
                                         <h4>{{ event.name }}</h4>
-                                        <p><i class="fas fa-calendar-alt"></i> {{ moment(event.start_date).format('d-MMM-YYYY') }} at {{ event.start_time }} </p>
+                                        <p><i class="fas fa-calendar-alt"></i> {{ moment(event.start_date).format('ddd., MMM., YYYY') }} at {{ moment(event.start_time, 'H:m a').format('H:m') }} </p>
                                         <p><i class="fas fa-map-marker-alt"></i> {{ event.location }} </p>
                                         <p>{{ removeTags(event.description) }}...</p>
                                     </div>
@@ -53,7 +53,7 @@
                         </tr>
                         <tr>
                             <td class="py-[4px] px-2">{{ totalQuantity }}</td>
-                            <td class="py-[4px] px-2 font-bold">{{ totalPrice.toFixed(2) }} {{  $page.props?.currency.value }}</td>
+                            <td class="py-[4px] px-2 font-bold">{{ totalPrice.toFixed(2) }} <span style="font-family: initial !important;">{{  $page.props?.currency.value }}</span></td>
                         </tr>
                     </table>
                 </div>

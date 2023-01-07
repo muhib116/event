@@ -11,7 +11,7 @@
                     <div class="col-md-9">
                         <div class="result-right">
                             <div class="result-forupr">
-                                <h2>Search results for <span> “...”</span></h2>
+                                <h2>Search results</h2>
                             </div>
 
                             <div class="row">

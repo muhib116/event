@@ -21,7 +21,7 @@
                     <div class="gap-6 grid grid-cols-1 md:grid-cols-2">
                         <div class="element">
                             <label for="currency">Currency</label>
-                            <input type="text" id="currency" name="currency" :value="form.currency" disabled>
+                            <input class="disabled:opacity-60" type="text" style="font-family: initial !important;" name="currency" value="€" disabled>
                             <div class="text-red-500" v-if="form.errors.currency">{{ form.errors.currency }}</div>
                         </div>
                         <div class="element">
@@ -36,9 +36,9 @@
                         <div class="text-red-500" v-if="form.errors.home_banner_text">{{ form.errors.home_banner_text }}</div>
                     </div>
                     <div class="element">
-                        <label for="copy_write">Copywriter text</label>
-                        <input type="text" id="copy_write" name="copy_write" v-model="form.copy_write">
-                        <div class="text-red-500" v-if="form.errors.copy_write">{{ form.errors.copy_write }}</div>
+                        <label for="site_name">Site name</label>
+                        <input type="text" name="site_name" v-model="form.site_name">
+                        <div class="text-red-500" v-if="form.errors.site_name">{{ form.errors.site_name }}</div>
                     </div>
                     <div class="element">
                         <label for="paypal_publish_key">Paypal client id</label>
@@ -208,7 +208,7 @@ const prev_fave_icon = ref(false);
 const prev_footer_logo_img = ref(false);
 
 const form = useForm({
-    currency: '',
+    currency: '€',
     commission: null,
     home_banner_text: '',
     home_banner_image: null,
@@ -221,7 +221,7 @@ const form = useForm({
     youtube_link: null,
     telegram_link: null,
     fave_icon: null,
-    copy_write: null,
+    site_name: null,
     paypal_publish_key: null,
     stripe_publish_key: null,
     stripe_secret_key: null,
@@ -230,11 +230,10 @@ const form = useForm({
 });
 onMounted(()=> {
     let settings = props.site_settings;
-    // console.log(settings);
-    form.currency = _.find(settings, {name: 'currency'})?.value ? _.find(settings, {name: 'currency'})?.value : '€';
+    form.currency = '€';
     form.commission = _.find(settings, {name: 'commission'})?.value;
     form.home_banner_text = _.find(settings, {name: 'home_banner_text'})?.value;
-    form.copy_write = _.find(settings, {name: 'copy_write'})?.value;
+    form.site_name = _.find(settings, {name: 'site_name'})?.value;
     form.stripe_publish_key = _.find(settings, {name: 'stripe_publish_key'})?.value;
     form.stripe_secret_key = _.find(settings, {name: 'stripe_publish_key'})?.value;
     form.paypal_publish_key = _.find(settings, {name: 'paypal_publish_key'})?.value;
@@ -253,8 +252,7 @@ onMounted(()=> {
     prev_img.value = _.find(settings, {name: 'home_banner_image'})?.value;
     prev_logo_img.value = _.find(settings, {name: 'logo_image'})?.value;
     prev_footer_logo_img.value = _.find(settings, {name: 'footer_logo_image'})?.value;
-    prev_fave_icon.value = _.find(settings, {name: 'fave_icon'})?.value;
-    // console.log(_.find(settings, {name: 'home_banner_image'})?.value);
+    prev_fave_icon.value = _.find(settings, {name: 'fave_icon'})?.value; 
 });
 
 function onFileChange(e, type=null) {
@@ -273,8 +271,7 @@ function onFileChange(e, type=null) {
     else {
         const file = URL.createObjectURL(e.target.files[0]);
         prev_img.value = file;
-    }
-    // advertise_form.image = file;
+    } 
 }
 
 function saveSettings() {

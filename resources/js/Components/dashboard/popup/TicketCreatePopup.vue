@@ -43,7 +43,7 @@
               <div v-show="ticketForm.ticketType == 'Paid'" class="element pricing" id="ticket_price">
                  <label for="paid">Price</label>
                  <div class="two-columns">
-                    <input type="text" :value="$page.props.currency?.value" disabled="">
+                    <input style="font-family: initial !important;" type="text" :value="$page.props.currency?.value" disabled="">
                     <input v-model="ticketForm.price" min="0" type="number">
                  </div>
               </div>
