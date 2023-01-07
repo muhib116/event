@@ -39,6 +39,7 @@ class FrontendController extends Controller
         "Startups & Small Business",
         "Technology & Science",
     ];
+    public $data;
 
     public function __construct()
     {
@@ -63,23 +64,21 @@ class FrontendController extends Controller
                                 ->where('publish', 1)
                                 ->withMin('eventTickets', 'price')
                                 ->withMax('eventTickets', 'price')
-                                ->whereDate('end_date', '>', now())
+                                ->whereDate('start_date', '>', now())
                                 ->withSum('eventTickets as ticket_sold', 'sold')
-                                ->withSum('eventTickets as tickets_stock_limit', 'stock_limit')
-                                // ->with(['eventTickets' => function($q) {
-                                //     return $q->select('stock_limit,sold');
-                                // }])
+                                ->withSum('eventTickets as tickets_stock_limit', 'stock_limit') 
                                 ->orderBy('ticket_sold', 'DESC')
                                 ->get()->filter(function($item) {
                                     $stock_limit = $item->eventTickets->sum('stock_limit');
                                     $sold = $item->eventTickets->sum('sold');
+                                    if ($sold == 0) {
+                                        return false;
+                                    }
                                     if ($stock_limit > $sold) {
                                         return true;
                                     }
                                     return false;
                                 })->take(3);
-        // return $this->data['category_events'];
-        // return $this->data['top_selling_events'];
         $this->data['featured_advertise'] = Advertise::where('featured', 1)
                                             ->orderBy('position', 'ASC')
                                             ->where('end_at', '>', Carbon::now())
