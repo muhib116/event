@@ -16,7 +16,7 @@
                 <div class="settings--order-notification account-item" v-show="activeTab == 'lists'">
 
 
-                    <div class="shadow mt-10 rounded border-t">
+                    <div class="shadow mt-10 rounded border-t overflow-x-auto">
                         <table class="w-full rounded">
                             <thead class="border-b">
                                 <tr>

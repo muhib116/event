@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 06, 2023 at 12:13 PM
+-- Generation Time: Jan 06, 2023 at 10:27 PM
 -- Server version: 5.7.33
 -- PHP Version: 8.1.7RC1
 
@@ -42,6 +42,16 @@ CREATE TABLE `advertises` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `advertises`
+--
+
+INSERT INTO `advertises` (`id`, `title`, `image`, `description`, `status`, `end_at`, `start_at`, `position`, `link`, `settings`, `featured`, `created_at`, `updated_at`) VALUES
+(1, 'Basia', 'images\\-f21c9127b4dc2d47b24687d79b8d0dec-Capture.PNG', 'Ut est aut possimus', 0, '1978-05-25 14:26:00', '1989-11-17 14:15:00', 27, 'Voluptatem quisquam', NULL, 1, '2023-01-06 12:44:45', '2023-01-06 16:16:43'),
+(2, 'Glenna', 'images\\-0de98d9f58ef6f414cf72e4344298fed-Capture.PNG', 'Rerum nemo eveniet', 0, '1987-10-09 16:11:00', '2000-03-14 12:15:00', 88, 'Ab nihil et Nam esse', NULL, 1, '2023-01-06 12:46:44', '2023-01-06 16:16:43'),
+(3, 'Nora', 'images\\-5ca0e8cb501def47c3d77b30dcb40c53-Capture.PNG', 'Minim qui cillum ill', 1, '2023-01-28 03:28:00', '2023-01-05 05:47:00', 3, 'Totam aliquip et in', NULL, 1, '2023-01-06 12:47:33', '2023-01-06 12:48:52'),
+(4, 'Vincent', 'images\\-09af831bda2916cbef87784f5b7b2625-Capture.PNG', 'Explicabo Ipsam eli', 0, '1972-05-26 15:42:00', '2001-06-21 18:33:00', 31, 'Voluptate dolor et a', NULL, 1, '2023-01-06 12:47:48', '2023-01-06 16:16:43');
 
 -- --------------------------------------------------------
 
@@ -129,11 +139,12 @@ CREATE TABLE `event_lists` (
 
 INSERT INTO `event_lists` (`id`, `user_id`, `eventType`, `name`, `slug`, `description`, `terms_and_conditions`, `audience`, `attention`, `location`, `url`, `locationTips`, `video_link`, `map_link`, `eventCategory`, `timezone`, `start_date`, `start_time`, `end_date`, `end_time`, `website`, `instagram`, `twitter`, `facebook`, `settings`, `publish`, `created_at`, `updated_at`, `weekly_notice`, `hourly_notice`, `admin_overview_notice`, `can_withdraw_notice`) VALUES
 (1, 3, 'live-event', 'Olga Bentley', 'olga-bentley', '<p>Tempora esse et aut</p>', 'Dignissimos ipsum ut', 'Perferendis adipisci', 'Ullam modi ipsum un', 'Exercitationem in qu', 'https://www.hobi.co', 'Eius aut quia porro', 'Sed quisquam velit q', 'Eveniet nisi ex nul', NULL, '-6', '2023-01-27', '12:47:00', '2023-01-31', '05:15:00', 'https://www.torunagabywu.com.au', 'https://www.fylomak.com', 'https://www.dicazyruxizil.org.uk', 'https://www.syd.org', '[]', 1, '2022-12-30 08:17:59', '2023-01-06 02:22:58', 0, 0, 0, 0),
-(2, 3, 'online-event', 'Robin Moody', 'robin-moody', 'Est consequatur do', 'Totam ratione aperia', 'Obcaecati laboriosam', 'Libero rerum sed har', 'Fugit eos assumenda', 'https://www.kaxyd.cm', 'Est tempore volupta', 'Sint a vero sed nost', 'Quia laborum Facere', 'food-and-drink', '13', '2022-10-12', '05:30:00', '2022-12-01', '12:41:00', 'https://www.wezybozyxyratuz.ca', 'https://www.nejiluwibusetyp.tv', 'https://www.dune.cc', 'https://www.feqy.info', '[]', 1, '2022-12-31 08:58:36', '2023-01-01 09:13:29', 0, 0, 0, 0),
-(3, 3, 'online-event', 'Denton Jennings', 'denton-jennings', '<p>Sit eu minim ullamco</p>', 'Maiores magna est v', 'Necessitatibus eveni', 'Minus adipisci esse', 'Ipsam omnis distinct', 'https://www.kakidezuhizy.com', 'Minus dolor corrupti', 'Eum eaque doloribus', 'Recusandae Officiis', NULL, '-4', '2023-01-07', '18:15:00', '2023-01-26', '14:58:00', 'https://www.sekawujita.me.uk', 'https://www.wukemonyfatame.me.uk', 'https://www.nomun.org.uk', 'https://www.qacyvaduwos.co', '[]', 1, '2023-01-01 09:38:32', '2023-01-06 02:32:35', 0, 0, 0, 0),
-(4, 3, 'live-event', 'Breanna Booth', 'breanna-booth', 'Dolorum et amet dol', 'Eum irure est conseq', 'Ratione quaerat dolo', 'Aut non voluptate mo', 'Reiciendis sed excep', 'https://www.nijel.us', 'Corporis sed autem o', 'Praesentium atque ci', 'Omnis qui dignissimo', 'food-and-drink', '2', '2022-12-01', '07:51:00', '2022-12-20', '04:21:00', 'https://www.dijibemiziva.org', 'https://www.vujoh.cc', 'https://www.conuqelezorix.net', 'https://www.xubimohupyfydy.org', '[]', 1, '2023-01-01 10:08:52', '2023-01-05 09:23:01', 0, 0, 0, 0),
-(5, 3, 'online-event', 'Tatiana Pierce', 'tatiana-pierce', 'Amet doloremque exc', 'Laboriosam quas ex', 'Sed doloremque aut d', 'Eum ullamco eum qui', 'Consequatur Fugiat', 'https://www.lasohul.biz', 'Quibusdam cupidatat', 'Similique illum fug', 'Ut aut omnis tempori', 'career', '8', '2022-11-08', '00:30:00', '2022-12-19', '11:33:00', 'https://www.xuhosyrilup.us', 'https://www.kejyqizef.net', 'https://www.lahadego.cm', 'https://www.gusyqemi.ws', '[]', 1, '2023-01-05 09:58:59', '2023-01-05 12:51:28', 0, 0, 0, 0),
-(6, 3, 'online-event', 'Valentine Horn', 'valentine-horn', '<p>Et necessitatibus ci asf asdf asdf&nbsp;</p>', 'Mollit dolorem dolor', 'Obcaecati perspiciat asdfasdf&nbsp;', 'Illum elit ab exer aasdf asdf as fd', 'Quis perferendis in', 'asdf-', 'Placeat temporibus', 'Nihil earum voluptas', 'Autem est tempor ad', 'career', '-2', '2023-01-13', '18:48:00', '2023-01-27', '05:03:00', 'https://www.pybyjyq.com', 'https://www.xinifycejywi.me.uk', 'https://www.jyzevuka.com', 'https://www.ryty.me', '[]', 1, '2023-01-05 12:31:30', '2023-01-06 01:13:20', 1, 0, 0, 0);
+(2, 3, 'online-event', 'Robin Moody', 'robin-moody', '<p>Est consequatur do</p>', 'Totam ratione aperia', 'Obcaecati laboriosam', 'Libero rerum sed har', 'Fugit eos assumenda', 'https://www.kaxyd.cm', 'Est tempore volupta', 'Sint a vero sed nost', 'Quia laborum Facere', 'food-and-drink', '13', '2022-12-14', '05:30:00', '2022-12-19', '12:41:00', 'https://www.wezybozyxyratuz.ca', 'https://www.nejiluwibusetyp.tv', 'https://www.dune.cc', 'https://www.feqy.info', '[]', 1, '2022-12-31 08:58:36', '2023-01-06 08:52:15', 0, 0, 1, 1),
+(3, 3, 'online-event', 'Denton Jennings', 'denton-jennings', '<p>Sit eu minim ullamco</p>', 'Maiores magna est v', 'Necessitatibus eveni', 'Minus adipisci esse', 'Ipsam omnis distinct', 'https://www.kakidezuhizy.com', 'Minus dolor corrupti', 'Eum eaque doloribus', 'https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d58421.887701467866!2d90.4036352!3d23.769907200000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1673027275285!5m2!1sen!2sbd', NULL, '-4', '2023-01-07', '02:15:00', '2023-01-26', '14:58:00', 'https://www.sekawujita.me.uk', 'https://www.wukemonyfatame.me.uk', 'https://www.nomun.org.uk', 'https://www.qacyvaduwos.co', '[]', 1, '2023-01-01 09:38:32', '2023-01-06 11:48:42', 0, 1, 0, 0),
+(4, 3, 'live-event', 'Breanna Booth', 'breanna-booth', 'Dolorum et amet dol', 'Eum irure est conseq afdsdf', 'Ratione quaerat dolo', 'Aut non voluptate mo', 'Reiciendis sed excep', 'https://www.nijel.us', 'Corporis sed autem o', 'Praesentium atque ci', 'Omnis qui dignissimo', 'food-and-drink', '2', '2022-12-01', '07:51:00', '2022-12-20', '04:21:00', NULL, NULL, NULL, NULL, '[]', 1, '2023-01-01 10:08:52', '2023-01-06 13:50:01', 0, 0, 1, 1),
+(5, 3, 'online-event', 'Tatiana Pierce', 'tatiana-pierce', '<p>Amet doloremque exc</p>', 'Laboriosam quas ex', 'Sed doloremque aut d', 'Eum ullamco eum qui', 'Consequatur Fugiat', 'https://www.lasohul.biz', 'Quibusdam cupidatat', 'Similique illum fug', 'Ut aut omnis tempori', 'career', '8', '2023-01-07', '00:30:00', '2023-01-31', '11:33:00', 'https://www.xuhosyrilup.us', 'https://www.kejyqizef.net', 'https://www.lahadego.cm', 'https://www.gusyqemi.ws', '[]', 1, '2023-01-05 09:58:59', '2023-01-06 08:52:05', 0, 1, 0, 0),
+(6, 3, 'online-event', 'Valentine Horn', 'valentine-horn', '<p>Et necessitatibus ci asf asdf asdf&nbsp;</p>', 'Mollit dolorem dolor', 'Obcaecati perspiciat asdfasdf&nbsp;', 'Illum elit ab exer aasdf asdf as fd', 'Quis perferendis in', 'asdf-', 'Placeat temporibus', 'Nihil earum voluptas', 'Autem est tempor ad', 'career', '-2', '2023-01-13', '18:48:00', '2023-01-27', '05:03:00', 'https://www.pybyjyq.com', 'https://www.xinifycejywi.me.uk', 'https://www.jyzevuka.com', 'https://www.ryty.me', '[]', 1, '2023-01-05 12:31:30', '2023-01-06 08:52:07', 1, 0, 0, 0),
+(7, 3, 'online-event', 'Bryar Cantu', 'bryar-cantu', '<p>asdfasfd asd sdf</p>', 'Voluptatem nobis at', 'Sint illum in aut', 'Facere et aut in non', 'Voluptatem incidunt', 'https://www.gymucedyzod.mobi', 'Cupiditate exercitat', 'Commodo totam ex nul', 'In quaerat laborum e', 'food-and-drink', '-1', '2023-01-13', '23:32:00', '2023-01-24', '19:47:00', 'https://www.ceni.org.uk', 'https://www.qycali.org.au', 'https://www.kocekehirijiked.ca', 'https://www.xupe.cm', '[]', 0, '2023-01-06 10:23:23', '2023-01-06 15:17:13', 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -168,12 +179,12 @@ CREATE TABLE `event_tickets` (
 INSERT INTO `event_tickets` (`id`, `user_id`, `event_id`, `ticketType`, `ticket_name`, `ticket_stock`, `stock_limit`, `price`, `purchase_limit`, `ticket_description`, `isTransferFeesToGuest`, `questions`, `perks`, `sold`, `settings`, `created_at`, `updated_at`) VALUES
 (1, 3, 1, 'Paid', 'PHP', 'limited', 50, 5.00, 15, 'vfasd', NULL, '[]', 'asdf', 34, '{\"isHidden\": false}', '2022-12-30 08:18:23', '2022-12-30 10:26:51'),
 (2, 3, 1, 'Free', 'Laravel', 'unlimited', NULL, 0.00, 3, 'asdf', NULL, '[]', 'asdf', 14, '{\"isHidden\": false}', '2022-12-30 08:18:46', '2022-12-30 10:26:51'),
-(3, 3, 2, 'Paid', 'SDsf', 'limited', 10, 50.00, 3, 'asdf', NULL, '[]', 'asdf', 0, '{\"isHidden\": false}', '2022-12-31 08:59:04', '2022-12-31 08:59:04'),
-(4, 3, 3, 'Paid', 'Laravel', 'limited', 50, 50.00, 2, 'asdfasdf', 1, '[]', 'asdfasdf', 1, '{\"isHidden\": false}', '2023-01-01 09:43:39', '2023-01-03 12:25:13'),
+(3, 3, 2, 'Paid', 'SDsf', 'limited', 10, 50.00, 3, 'asdf', NULL, '[]', 'asdf', 2, '{\"isHidden\": false}', '2022-12-31 08:59:04', '2023-01-06 07:23:11'),
+(4, 3, 3, 'Paid', 'Laravel', 'limited', 50, 50.00, 2, 'asdfasdf', 1, '[]', 'asdfasdf', 7, '{\"isHidden\": false}', '2023-01-01 09:43:39', '2023-01-06 14:53:41'),
 (5, 3, 4, 'Free', 'PHP', 'limited', 10, 0.00, 2, 'asdf', NULL, '[]', 'asdf', 0, '{\"isHidden\": false}', '2023-01-01 10:09:16', '2023-01-01 10:09:16'),
 (6, 3, 4, 'Paid', 'Laravel', 'limited', 50, 10.00, 2, 'asdf', 1, '[]', 'asdf', 17, '{\"isHidden\": false}', '2023-01-02 09:26:31', '2023-01-05 09:18:27'),
-(7, 3, 5, 'Paid', 'Gray Sutton', 'limited', 140, 5.00, 8, 'Id facilis earum ad', 1, '[]', 'Est molestiae repre', 2, '{\"isHidden\": false}', '2023-01-05 09:59:36', '2023-01-05 10:07:34'),
-(8, 3, 6, 'Paid', 'Emelie Parisian', 'limited', 50, 12.00, 3, 'asfd', 1, '[]', 'sdfa', 8, '{\"isHidden\": false}', '2023-01-05 12:32:54', '2023-01-06 00:47:45');
+(7, 3, 5, 'Paid', 'Gray Sutton', 'limited', 140, 5.00, 8, 'Id facilis earum ad', 1, '[]', 'Est molestiae repre', 2, '{\"isHidden\": false}', '2023-01-05 09:59:36', '2023-01-06 09:58:01'),
+(8, 3, 6, 'Paid', 'Emelie Parisian', 'limited', 50, 12.00, 3, 'asfd', 1, '[]', 'sdfa', 10, '{\"isHidden\": false}', '2023-01-05 12:32:54', '2023-01-06 07:23:11');
 
 -- --------------------------------------------------------
 
@@ -194,12 +205,12 @@ CREATE TABLE `event_views` (
 --
 
 INSERT INTO `event_views` (`id`, `event_list_id`, `count`, `created_at`, `updated_at`) VALUES
-(1, 1, 12, '2022-12-30 10:50:14', '2022-12-30 16:24:23'),
-(2, 2, 5, '2022-12-31 08:59:18', '2023-01-01 08:32:45'),
-(3, 3, 7, '2023-01-01 09:46:32', '2023-01-03 12:24:56'),
-(4, 4, 20, '2023-01-01 10:10:07', '2023-01-05 09:13:52'),
-(5, 5, 3, '2023-01-05 09:59:46', '2023-01-05 22:08:13'),
-(6, 6, 25, '2023-01-05 12:38:12', '2023-01-06 05:53:52');
+(1, 1, 13, '2022-12-30 10:50:14', '2023-01-06 13:22:02'),
+(2, 2, 6, '2022-12-31 08:59:18', '2023-01-06 07:20:45'),
+(3, 3, 43, '2023-01-01 09:46:32', '2023-01-06 15:53:50'),
+(4, 4, 21, '2023-01-01 10:10:07', '2023-01-06 08:50:50'),
+(5, 5, 11, '2023-01-05 09:59:46', '2023-01-06 15:48:13'),
+(6, 6, 26, '2023-01-05 12:38:12', '2023-01-06 07:04:42');
 
 -- --------------------------------------------------------
 
@@ -242,7 +253,7 @@ CREATE TABLE `guests` (
 --
 
 INSERT INTO `guests` (`id`, `firstName`, `lastName`, `email`, `phone`, `settings`, `created_at`, `updated_at`, `ip_info`, `weekly_notice`, `hourly_notice`) VALUES
-(1, 'nasir', 'ullah khushi', 'entnasir23a@gmail.com', '223324', '{\"browser\": \"chrome\"}', '2022-12-30 08:19:22', '2023-01-06 05:57:18', '{\"ip\": \"37.111.194.194\", \"loc\": \"23.7260,90.4251\", \"org\": \"AS24389 GrameenPhone Ltd.\", \"city\": \"Dhaka\", \"postal\": \"1217\", \"readme\": \"https://ipinfo.io/missingauth\", \"region\": \"Dhaka\", \"country\": \"BD\", \"timezone\": \"Asia/Dhaka\"}', 0, 0),
+(1, 'nasir', 'ullah khushi', 'entnasir23a@gmail.com', '2323', '{\"browser\": \"chrome\"}', '2022-12-30 08:19:22', '2023-01-06 15:53:28', '{\"ip\": \"37.111.194.194\", \"loc\": \"23.7260,90.4251\", \"org\": \"AS24389 GrameenPhone Ltd.\", \"city\": \"Dhaka\", \"postal\": \"1217\", \"readme\": \"https://ipinfo.io/missingauth\", \"region\": \"Dhaka\", \"country\": \"BD\", \"timezone\": \"Asia/Dhaka\"}', 0, 0),
 (2, 'nas', 'rullah khushi', 'nasrullah23a@gmail.com', '23234', '{\"browser\": \"chrome\"}', '2023-01-01 09:24:25', '2023-01-06 04:38:01', '{\"ip\": \"37.111.194.194\", \"loc\": \"23.7260,90.4251\", \"org\": \"AS24389 GrameenPhone Ltd.\", \"city\": \"Dhaka\", \"postal\": \"1217\", \"readme\": \"https://ipinfo.io/missingauth\", \"region\": \"Dhaka\", \"country\": \"BD\", \"timezone\": \"Asia/Dhaka\"}', 0, 0),
 (3, 'Muhib', NULL, 'muhibbullah611@gmail.com', '3435512002323', NULL, '2023-01-01 09:24:25', '2023-01-01 09:24:25', NULL, 0, 0);
 
@@ -270,8 +281,7 @@ INSERT INTO `images` (`id`, `foreign_id`, `type`, `path`, `created_at`, `updated
 (5, 2, 'banner', 'images\\banner-3cbf84afa5bb61cb39a5b5c637b04eb2-pexels-craig-dennis-205421.jpg', '2023-01-01 08:40:30', '2023-01-01 08:40:30'),
 (8, 3, 'banner', 'images\\banner-70482d73924d79cc1291d9f34c9f4a0c-pexels-andrea-piacquadio-840996.jpg', '2023-01-01 09:43:19', '2023-01-01 09:43:19'),
 (9, 4, 'banner', 'images\\banner-b3c14330eda0157c4c992dbcb4ca8c17-Capture.PNG', '2023-01-01 10:08:56', '2023-01-01 10:08:56'),
-(10, 5, 'banner', 'images\\banner-f140829d41a781cb7653271ea335d51c-pexels-eduardo-rosas-968631.jpg', '2023-01-05 09:59:20', '2023-01-05 09:59:20'),
-(11, 6, 'banner', 'images\\banner-cb8bbaf470fb0fde04f2f25da31430f4-istockphoto-1385317854-612x612.jpg', '2023-01-05 12:32:02', '2023-01-05 12:32:02');
+(10, 5, 'banner', 'images\\banner-f140829d41a781cb7653271ea335d51c-pexels-eduardo-rosas-968631.jpg', '2023-01-05 09:59:20', '2023-01-05 09:59:20');
 
 -- --------------------------------------------------------
 
@@ -394,7 +404,7 @@ CREATE TABLE `pages` (
 --
 
 INSERT INTO `pages` (`id`, `title`, `slug`, `image`, `content`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Imprint', 'imprint', '', 'Adipisci laudantium optio aut dolor. Atque rerum architecto velit iusto et qui. Corporis voluptatibus facere blanditiis voluptatem.', 0, '2023-01-01 08:34:18', '2023-01-03 12:36:42'),
+(1, 'Imprint', 'imprint', '', 'Adipisci laudantium optio aut dolor. Atque rerum architecto velit iusto et qui. Corporis voluptatibus facere blanditiis voluptatem.', 0, '2023-01-01 08:34:18', '2023-01-06 13:33:15'),
 (2, 'Data privacy', 'data-privacy', '', '<p>Nostrum nobis ex nobis ut repudiandae. Consequatur quidem optio nihil ut sed doloribus delectus perspiciatis. Nostrum nobis ex nobis ut repudiandae. Consequatur quidem optio nihil ut sed doloribus delectus perspiciatis. Nostrum nobis ex nobis ut repudiandae. Consequatur quidem optio nihil ut sed doloribus delectus perspiciatis. Nostrum nobis ex nobis ut repudiandae. Consequatur quidem optio nihil ut sed doloribus delectus perspiciatis.</p><p>&nbsp;</p><p>Nostrum nobis ex nobis ut repudiandae. Consequatur quidem optio nihil ut sed doloribus delectus perspiciatis.</p>', 0, '2023-01-01 08:34:18', '2023-01-05 14:06:58'),
 (3, 'Terms & conditions', 'terms-conditions', '', 'Vel commodi necessitatibus eos ipsum quidem ut nisi a. Omnis in odit ea. Sit dolores velit vitae natus sit tempora quia sint.', 1, '2023-01-01 08:34:18', '2023-01-01 08:34:18');
 
@@ -441,7 +451,8 @@ CREATE TABLE `payment_details` (
 --
 
 INSERT INTO `payment_details` (`id`, `user_id`, `bank_name`, `bank_number`, `account_name`, `paypal_info`, `stripe_info`, `mpesa_info`, `created_at`, `updated_at`) VALUES
-(5, 3, NULL, NULL, NULL, 'super@gmail.com', NULL, NULL, '2023-01-05 09:26:56', '2023-01-05 09:26:56');
+(5, 3, NULL, NULL, NULL, 'super@gmail.com', NULL, NULL, '2023-01-05 09:26:56', '2023-01-05 09:26:56'),
+(6, 1, 'Linda Houston', '761', 'Numquam quas id null', 'diqomy@mailinator.com', NULL, '+1 (623) 576-5007', '2023-01-06 15:22:26', '2023-01-06 15:22:26');
 
 -- --------------------------------------------------------
 
@@ -487,19 +498,20 @@ INSERT INTO `site_settings` (`id`, `name`, `value`, `created_at`, `updated_at`) 
 (4, 'logo_image', 'images/Ticketprime_V2_Logo_dark-blue-dark-blue-brandname-transparent-background_63af1068829d0.png', NULL, '2022-12-30 10:23:04'),
 (5, 'footer_logo_image', 'images/Ticketprime_V2_Logo_gold-white-brandname-transparent-background_63af106883f65.png', NULL, '2022-12-30 10:23:04'),
 (6, 'home_banner_text', 'Exclusive events, priceless moments', NULL, '2022-12-30 10:23:04'),
-(7, 'facebook_link', 'facebook.com', NULL, '2022-12-30 12:09:52'),
-(8, 'twitter_link', 'twitter.com', NULL, '2022-12-30 12:09:52'),
-(9, 'tiktok_link', NULL, NULL, '2022-12-30 10:23:04'),
-(10, 'instagram_link', NULL, NULL, '2022-12-30 10:23:04'),
+(7, 'facebook_link', 'https://facebook.com', NULL, '2023-01-06 12:09:37'),
+(8, 'twitter_link', 'https://twitter.com', NULL, '2023-01-06 12:09:37'),
+(9, 'tiktok_link', 'https://twitter.com', NULL, '2023-01-06 12:09:37'),
+(10, 'instagram_link', 'https://twitter.com', NULL, '2023-01-06 12:09:37'),
 (11, 'youtube_link', NULL, NULL, '2022-12-30 10:23:04'),
 (12, 'telegram_link', NULL, NULL, '2022-12-30 10:23:04'),
 (13, 'fave_icon', 'images/Ticketprime_V2_Logo_white-white-brandname-transparent-background_63b7a10801af6.png', '2023-01-05 22:16:29', '2023-01-05 22:18:16'),
-(14, 'copy_write', '© 2020 Karcis incorporated', '2023-01-05 22:21:47', '2023-01-05 22:21:47'),
-(15, 'paypal_publish_key', NULL, '2023-01-05 22:28:09', '2023-01-06 06:13:17'),
-(16, 'stripe_publish_key', NULL, '2023-01-05 22:36:55', '2023-01-06 06:13:17'),
-(17, 'stripe_secret_key', NULL, '2023-01-05 22:36:55', '2023-01-06 06:13:17'),
-(18, 'auth0_domain', NULL, '2023-01-05 22:36:55', '2023-01-06 06:13:17'),
-(19, 'auth0_client_id', NULL, '2023-01-05 22:36:55', '2023-01-06 06:13:17');
+(14, 'copy_write', '© 2020 Karcis incorporated', '2023-01-05 22:21:47', '2023-01-06 12:08:37'),
+(15, 'paypal_publish_key', 'AQeJeHLGLcEAq6RII_55oIyly5_zD5LaNxldDPauKB-qxcfwo33NbxErw0QxuqSrmvwjO79AVSKAskrY', '2023-01-05 22:28:09', '2023-01-06 06:25:28'),
+(16, 'stripe_publish_key', 'pk_test_51M1lgfDKrpdPsiSpc2iGtO8XgCgWkjhGvXo5JRT6jpH6NLsyPDVXTSczbUFEihz94XQBZnWvQ2hqE46mJraU238E00l1d2VpQG', '2023-01-05 22:36:55', '2023-01-06 06:25:28'),
+(17, 'stripe_secret_key', 'pk_test_51M1lgfDKrpdPsiSpc2iGtO8XgCgWkjhGvXo5JRT6jpH6NLsyPDVXTSczbUFEihz94XQBZnWvQ2hqE46mJraU238E00l1d2VpQG', '2023-01-05 22:36:55', '2023-01-06 12:06:17'),
+(18, 'auth0_domain', 'ticketprime.eu.auth0.com', '2023-01-05 22:36:55', '2023-01-06 16:25:10'),
+(19, 'auth0_client_id', 'lZ95z94hs2EjLqqrdFwMWEDY5XpVyXYD', '2023-01-05 22:36:55', '2023-01-06 16:25:10'),
+(20, 'site_name', 'Nothin Prime', '2023-01-06 14:19:22', '2023-01-06 14:20:41');
 
 -- --------------------------------------------------------
 
@@ -652,7 +664,17 @@ INSERT INTO `ticket_numbers` (`id`, `guest_id`, `ticket_sale_id`, `ticket_number
 (73, 2, 31, '3102PI72', NULL, NULL, NULL),
 (74, 2, 32, '32ZKTE73', NULL, NULL, NULL),
 (75, 2, 33, '33EOR674', NULL, NULL, NULL),
-(76, 2, 34, '34X3F375', NULL, NULL, NULL);
+(76, 2, 34, '34X3F375', NULL, NULL, NULL),
+(77, 1, 35, '35274G76', NULL, NULL, NULL),
+(78, 1, 36, '36Q6VI77', NULL, NULL, NULL),
+(79, 1, 37, '37HW2K78', NULL, NULL, NULL),
+(80, 1, 38, '38PIPI79', NULL, NULL, NULL),
+(81, 1, 39, '39QIRG80', NULL, NULL, NULL),
+(82, 1, 40, '40XDJA81', NULL, NULL, NULL),
+(83, 1, 41, '41JXO382', NULL, NULL, NULL),
+(84, 1, 42, '42PEFZ83', NULL, NULL, NULL),
+(85, 1, 43, '43HCEW84', NULL, NULL, NULL),
+(86, 1, 44, '44F16B85', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -715,7 +737,17 @@ INSERT INTO `ticket_sales` (`id`, `organizer_id`, `guest_id`, `ticket_id`, `tick
 (31, 3, 2, 8, 'Paid', 1, 3.00, 12.00, 'Hand Cash', NULL, 'complete', '2023-01-05 22:54:10', '2023-01-05 22:54:10', '98281eee-32c8-462f-9894-44ac6cf8f54c'),
 (32, 3, 2, 8, 'Paid', 1, 3.00, 12.00, 'Hand Cash', NULL, 'complete', '2023-01-05 22:58:36', '2023-01-05 22:58:36', '98282083-d4ab-4b34-924b-2691bf50f5e9'),
 (33, 3, 2, 8, 'Paid', 1, 3.00, 12.00, 'Hand Cash', NULL, 'complete', '2023-01-06 00:46:47', '2023-01-06 00:46:47', '98284735-24e0-42e9-b4b8-23e173a59f8f'),
-(34, 3, 2, 8, 'Paid', 1, 3.00, 12.00, 'Hand Cash', NULL, 'complete', '2023-01-06 00:47:45', '2023-01-06 00:47:45', '9828478c-6e22-48eb-a4d9-6f8baeace197');
+(34, 3, 2, 8, 'Paid', 1, 3.00, 12.00, 'Hand Cash', NULL, 'complete', '2023-01-06 00:47:45', '2023-01-06 00:47:45', '9828478c-6e22-48eb-a4d9-6f8baeace197'),
+(35, 3, 1, 8, 'Paid', 1, 3.00, 12.00, 'Hand Cash', NULL, 'complete', '2023-01-06 07:21:22', '2023-01-06 07:21:22', '9828d452-24d3-4046-9a06-56a5beca927e'),
+(36, 3, 1, 4, 'Paid', 1, 3.00, 50.00, 'Hand Cash', NULL, 'complete', '2023-01-06 07:21:22', '2023-01-06 07:21:22', '9828d452-638c-48b7-8154-9e4e02c5e5ac'),
+(37, 3, 1, 3, 'Paid', 1, 3.00, 50.00, 'Hand Cash', NULL, 'complete', '2023-01-06 07:21:22', '2023-01-06 07:21:22', '9828d452-694d-4e78-a3c9-90def8b594d8'),
+(38, 3, 1, 8, 'Paid', 1, 3.00, 12.00, 'Hand Cash', NULL, 'complete', '2023-01-06 07:23:11', '2023-01-06 07:23:11', '9828d4f8-9b0d-412a-bf4e-55bd61cd3d9c'),
+(39, 3, 1, 4, 'Paid', 1, 3.00, 50.00, 'Hand Cash', NULL, 'complete', '2023-01-06 07:23:11', '2023-01-06 07:23:11', '9828d4f8-a205-400a-b4e4-65dddb65ee1c'),
+(40, 3, 1, 3, 'Paid', 1, 3.00, 50.00, 'Hand Cash', NULL, 'complete', '2023-01-06 07:23:11', '2023-01-06 07:23:11', '9828d4f8-a43b-4db8-b405-0c598244c29f'),
+(41, 3, 1, 4, 'Paid', 1, 3.00, 50.00, 'Hand Cash', NULL, 'complete', '2023-01-06 09:48:07', '2023-01-06 09:48:07', '982908cd-1505-483d-8f4c-c676b6acc540'),
+(42, 3, 1, 4, 'Paid', 1, 3.00, 50.00, 'Hand Cash', NULL, 'complete', '2023-01-06 09:48:59', '2023-01-06 09:48:59', '9829091c-d03f-456c-8811-c044ec341282'),
+(43, 3, 1, 4, 'Paid', 1, 3.00, 50.00, 'Hand Cash', NULL, 'complete', '2023-01-06 14:51:58', '2023-01-06 14:51:58', '98297576-f2e4-4fbf-97e3-77cbb833564b'),
+(44, 3, 1, 4, 'Paid', 1, 3.00, 50.00, 'Hand Cash', NULL, 'complete', '2023-01-06 14:53:41', '2023-01-06 14:53:41', '98297614-d704-49e3-bbbb-24bd0955548f');
 
 -- --------------------------------------------------------
 
@@ -759,13 +791,6 @@ CREATE TABLE `transactions` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `transactions`
---
-
-INSERT INTO `transactions` (`id`, `user_id`, `event_list_id`, `amount`, `note`, `bank_name`, `bank_number`, `account_name`, `paypal_info`, `stripe_info`, `mpesa_info`, `first_name`, `last_name`, `email`, `phone`, `status`, `settings`, `created_at`, `updated_at`) VALUES
-(4, 3, 5, 4.00, NULL, NULL, NULL, NULL, 'super@gmail.com', NULL, NULL, 'Organizer', 'User', 'org@gmail.com', NULL, 'paid', NULL, '2023-01-05 12:52:15', '2023-01-05 12:54:37');
-
 -- --------------------------------------------------------
 
 --
@@ -793,9 +818,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `interests`, `email`, `phone`, `email_verified_at`, `password`, `type`, `remember_token`, `settings`, `created_at`, `updated_at`) VALUES
-(1, 'Admin', 'User', NULL, 'entnasir23a@gmail.com', NULL, '2022-12-30 08:17:15', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'admin', 'Zpp6SUfwUlHPNPVmTGyXBqVTL8obnjAOSXNHKXBpnXmlG5gxi8yoXfoNfT7m', NULL, '2022-12-30 08:17:15', '2022-12-30 08:17:15'),
+(1, 'Admin', 'User', '[\"Charity & Aid\", \"Career\", \"Business\"]', 'entnasir23a@gmail.com', NULL, '2022-12-30 08:17:15', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'admin', 'ickHVAq1hiRYH0U9BRMQ9pjjrPv5blVnmo4IBs8NW60zlNWJEhg0BadXIR0j', NULL, '2022-12-30 08:17:15', '2023-01-06 15:21:20'),
 (2, 'Client', 'User', NULL, 'client@gmail.com', NULL, '2022-12-30 08:17:15', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'clients', 'DVb9ew0KZU', NULL, '2022-12-30 08:17:15', '2022-12-30 08:17:15'),
-(3, 'Organizer', 'User', NULL, 'org@gmail.com', NULL, '2022-12-30 08:17:15', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'organizer', '9zUUQPoA5GsZPsZDwtTvsM4n6MuuEJZZvd7tcNqQDhi2Akg6Ast3YOoQxOJ2', NULL, '2022-12-30 08:17:15', '2022-12-30 08:17:15');
+(3, 'Organizer', 'User', NULL, 'org@gmail.com', NULL, '2022-12-30 08:17:15', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'organizer', 'am1bg4yQjPdNgEyd8mm27GtPHYwijju92cKAefVJQFQwfBf6FWOw3qxeH4C8', NULL, '2022-12-30 08:17:15', '2022-12-30 08:17:15');
 
 --
 -- Indexes for dumped tables
@@ -972,7 +997,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `advertises`
 --
 ALTER TABLE `advertises`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -990,7 +1015,7 @@ ALTER TABLE `discounts`
 -- AUTO_INCREMENT for table `event_lists`
 --
 ALTER TABLE `event_lists`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `event_tickets`
@@ -1020,7 +1045,7 @@ ALTER TABLE `guests`
 -- AUTO_INCREMENT for table `images`
 --
 ALTER TABLE `images`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `jobs`
@@ -1050,7 +1075,7 @@ ALTER TABLE `pages`
 -- AUTO_INCREMENT for table `payment_details`
 --
 ALTER TABLE `payment_details`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -1062,7 +1087,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `site_settings`
 --
 ALTER TABLE `site_settings`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `tickets`
@@ -1080,13 +1105,13 @@ ALTER TABLE `ticket_designs`
 -- AUTO_INCREMENT for table `ticket_numbers`
 --
 ALTER TABLE `ticket_numbers`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
 
 --
 -- AUTO_INCREMENT for table `ticket_sales`
 --
 ALTER TABLE `ticket_sales`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT for table `time_zones`

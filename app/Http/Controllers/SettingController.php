@@ -28,10 +28,10 @@ class SettingController extends Controller
         $request->validate([
             'commission' => 'required|numeric',
             'currency' => 'required',
-            'home_banner_image' => 'nullable|image',
-            'logo_image' => 'nullable|image',
-            'footer_logo_image' => 'nullable|image',
-            'fave_icon' => 'nullable|image',
+            'home_banner_image' => 'nullable|image|size:1024',
+            'logo_image' => 'nullable|image|size:1024',
+            'footer_logo_image' => 'nullable|image|size:1024',
+            'fave_icon' => 'nullable|image|size:1024',
             'home_banner_text' => 'required',
         ]);
         try {
@@ -99,9 +99,9 @@ class SettingController extends Controller
                 'name' => 'home_banner_text',
                 'value' => $request->home_banner_text,
             ]);
-            SiteSetting::updateOrCreate(['name' => 'copy_write'],[
-                'name' => 'copy_write',
-                'value' => $request->copy_write,
+            SiteSetting::updateOrCreate(['name' => 'site_name'],[
+                'name' => 'site_name',
+                'value' => $request->site_name,
             ]);
             SiteSetting::updateOrCreate(['name' => 'paypal_publish_key'],[
                 'name' => 'paypal_publish_key',
